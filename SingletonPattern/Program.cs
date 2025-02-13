@@ -8,7 +8,9 @@
 
         System.Console.WriteLine("Singleton - Thread Safety Demo");
         ThreadSafeDemo.ThreadSafe();
-        
+
+        System.Console.WriteLine("Singleton - Eager Loading demo");
+        EagetLoadingDemo.ThreadSafety();
     }
 
     

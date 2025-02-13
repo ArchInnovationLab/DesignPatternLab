@@ -71,15 +71,28 @@ public static void NoThreadSafety(){
 * Implement Double Check Locking
   * Locking obj is expensive and reduce the performance
   * Check instance is created or not before lock
-```
-if(Instance==null)
-{
-    lock(obj)
-    {
-        if(Instance==null)
-        {
-            Instance = new SingletonThreadSafe();
-        }
-    }
-}
-```
+  ```
+  if(Instance==null)
+  {
+      lock(obj)
+      {
+          if(Instance==null)
+          {
+              Instance = new SingletonThreadSafe();
+          }
+      }
+  }
+  ```
+
+### Lazy Loading
+* Instance is created when its required
+* Improve Performance  and Reduces the memory
+  
+### Eager Loading
+* Instance is created at the time of application start-up
+* It creates Instance is created and will be available instead of creating on-demand 
+* CLR takes care of creating the instance
+* 
+
+
+  
