@@ -53,3 +53,33 @@ public static void NoThreadSafety(){
 **Output:**
 
 ![alt text](asset/image.png)
+
+### Thread Safety
+* Implement Obj lock to avoid creating more than one Instance
+  * Refer SingletonThreadSafe class
+  ```
+  private static readonly object obj = new object();
+
+  lock(obj)
+  {
+    if(Instance==null)
+    {
+        Instance = new SingletonThreadSafe();
+    }
+  }
+  ```
+* Implement Double Check Locking
+  * Locking obj is expensive and reduce the performance
+  * Check instance is created or not before lock
+```
+if(Instance==null)
+{
+    lock(obj)
+    {
+        if(Instance==null)
+        {
+            Instance = new SingletonThreadSafe();
+        }
+    }
+}
+```

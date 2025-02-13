@@ -27,7 +27,7 @@ public sealed class SimpleSingleton
     }
 
 
-    public void PrintDetails(string message)
+    public void PrintMessage(string message)
     {
         Console.WriteLine(message);
     }
