@@ -3,10 +3,27 @@
     private static void Main(string[] args)
     {
         Console.WriteLine("Simple Singleton Example");
-        PrintEmp();
-        PrintStudent();
+
+        SingleThread();
+
+        //NoThreadSafety();
+        
     
     }
+
+    public static void SingleThread()
+    {
+        PrintEmp();
+        PrintStudent();
+    }
+
+    public static void NoThreadSafety(){
+        Parallel.Invoke(
+            ()=>PrintEmp(),
+            ()=>PrintStudent()
+        );
+    }
+
     public static void PrintEmp()
     {
         SimpleSingleton emp = SimpleSingleton.GetInstance;

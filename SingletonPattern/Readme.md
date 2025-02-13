@@ -36,3 +36,20 @@ public class Singleton
 }
 ```
 * Due to this issue the Singleton class should be sealed
+
+### Multi Thread Safety
+The implementation in SimpleSingleton works fine in the Single thread or linear execution.
+
+In the multithread it creates more than one instance and it violates the Singleton design pattern concept
+
+```
+public static void NoThreadSafety(){
+    Parallel.Invoke(
+        ()=>PrintEmp(),
+        ()=>PrintStudent()
+    );
+}
+```
+**Output:**
+
+![alt text](image.png)
