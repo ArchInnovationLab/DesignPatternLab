@@ -1,28 +1,21 @@
 ﻿internal class Program
 {
+    private static void Main(string[] args)
+    {
+        Console.WriteLine("Simple Singleton Example");
+        PrintEmp();
+        PrintStudent();
+    
+    }
     public static void PrintEmp()
     {
-        // Singleton emp = new Singleton();
-        Singleton emp = Singleton.GetInstance;
-        emp.PrintDetails("From Emp");
+        SimpleSingleton emp = SimpleSingleton.GetInstance;
+        emp.PrintDetails("This is Employee");
     }
 
     public static void PrintStudent()
     {
-        // Singleton emp = new Singleton();
-        Singleton stud = Singleton.GetInstance;
-        stud.PrintDetails("From Student");
+        SimpleSingleton student = SimpleSingleton.GetInstance;
+        student.PrintDetails("This is Student");
     }
-
-    public static void Main()
-    {
-        Console.WriteLine("Understand Singleton Design Pattern!");
-
-        PrintEmp();
-        PrintStudent();
-
-    }
-
-
-
 }
