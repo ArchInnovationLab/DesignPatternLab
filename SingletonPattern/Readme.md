@@ -52,4 +52,4 @@ public static void NoThreadSafety(){
 ```
 **Output:**
 
-![alt text](image.png)
+![alt text](asset/image.png)
